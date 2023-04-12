@@ -79,6 +79,12 @@ class Database
         $statement->execute();
     }
 
+    // we can use this func later in model so that we dont need to write the whole func this will make our job easier
+    public function prepare($sql)
+    {
+        return $this->pdo->prepare($sql);
+    }
+
     protected function log($message)
     {
         echo '[' . date('y-m-d H:i:s') . ']-' . $message . PHP_EOL;
